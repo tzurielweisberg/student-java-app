@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Run a one-line script
-        run: echo ${{ secrets.AQUA_KEY }}
+        run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.21.1
+             trivy . --debug
+
       - name: Checkout code
         uses: actions/checkout@v2
 
