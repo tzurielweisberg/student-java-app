@@ -9,6 +9,8 @@ jobs:
     name: Build
     runs-on: ubuntu-18.04
     steps:
+      - name: Run a one-line script
+        run: echo ${{ secrets.AQUA_KEY }}
       - name: Checkout code
         uses: actions/checkout@v2
 
